@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr-sistemi"
+version = "0.1.0"
+description = "Genel amaçlı, çok dilli (İngilizce + Türkçe) metin çıkarma CLI'ı — EasyOCR"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = [
+    # <5: 5.0.0.93 shipped with an empty cv2/data/ (no bundled Haar
+    # cascade XML files) — found while building plaka-tanima/yuz-tanima.
+    # Not load-bearing here (this project doesn't use Haar), pinned for
+    # consistency and to avoid the same regression if that changes.
+    "opencv-contrib-python-headless>=4.8,<5",
+    "easyocr>=1.7",
+    "numpy<2",
+]
+
+[project.scripts]
+ocr-sistemi = "ocr_sistemi.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pillow>=10.1",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
