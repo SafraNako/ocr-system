@@ -1,11 +1,11 @@
-# ocr-sistemi
+# ocr-system
 
-[![Tests](https://github.com/SafraNako/ocr-sistemi/actions/workflows/tests.yml/badge.svg)](https://github.com/SafraNako/ocr-sistemi/actions/workflows/tests.yml)
+[![Tests](https://github.com/SafraNako/ocr-system/actions/workflows/tests.yml/badge.svg)](https://github.com/SafraNako/ocr-system/actions/workflows/tests.yml)
 
 General-purpose text extraction from images — English and Turkish, any
 number of text regions, no assumptions about layout or format. Built on
 EasyOCR, same engine as
-[plaka-tanima](https://github.com/SafraNako/plaka-tanima), but a
+[plate-recognition](https://github.com/SafraNako/plate-recognition), but a
 different job: that one looks for exactly one plate-shaped rectangle and
 validates it against a fixed format; this one reads whatever text is
 anywhere in the image and makes no claims about what it should say.
@@ -36,8 +36,8 @@ ocr-sistemi belge.jpg --confidence 0.1
 ## Setup
 
 ```bash
-git clone https://github.com/SafraNako/ocr-sistemi.git
-cd ocr-sistemi
+git clone https://github.com/SafraNako/ocr-system.git
+cd ocr-system
 pip install -e .
 ```
 
